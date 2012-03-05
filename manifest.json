@@ -1,0 +1,25 @@
+{
+  "name": "Tumblr Infinite",
+  "version": "0.0.1",
+  "description": "Infinite scroll for tumblr",
+
+  "icons":
+    {
+      "48" : "tumblr-48.png"
+    },
+  "background_page" :"background.html",
+  "content_scripts": [
+    {
+      "matches" : ["http://*.tumblr.com/*"],
+      "css"     : ["tumblr-infinite.css"],
+      "js"      : ["vendor/jquery-1.7.1.min.js", "tumblr-infinite.js"],
+      "run_at"  : "document_end"
+    }
+  ],
+  "page_action": {
+    "default_icon": "tumblr-48.png",
+    "default_title": "Tumblr Infinite",
+    "default_popup": "pageaction-popup.html"
+  },
+  "permissions": ["tabs", "http://*.tumblr.com/*"]
+}

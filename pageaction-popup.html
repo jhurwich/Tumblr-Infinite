@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <script type="text/javascript" src="pageaction-popup.js"></script>
+    <style type="text/css">
+
+      *[hidden=true] {
+        display: none;
+      }
+
+      body {
+        width: 210px;
+        background-color: #67003c;
+        margin: 2px 0 2px 6px;
+        color: white;
+      }
+
+      .heading {
+        display: block;
+        margin-top: 6px;
+        font: 16px arial, sans-serif;
+      }
+
+      #load-button {
+        clear: left;
+      }
+
+      #load-input {
+        float: right;
+      }
+
+      #flash {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        color: #ffebb0;
+        height: 20px;
+        width: 90px;
+        margin: 6px 6px 0 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <span class="heading">Tumblr Infinite</span>
+    <div id="flash" hidden=true></div>
+    <input id="load-button" type="button" value="Load 10 More"
+           onclick="TumblrInfinitePA.loadMore(10);"/>
+    <input id="load-input" type="text" size="10"
+           onkeydown="if (event.keyCode == 13) TumblrInfinitePA.loadXMore();" />
+  </body>
+</html>

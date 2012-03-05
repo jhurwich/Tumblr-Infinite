@@ -1,0 +1,27 @@
+.infinite-vessel {
+  position: relative;
+}
+
+.infinite-header {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  z-index: 99999;
+  color: #67003c;
+  background-color: #ffebb0;
+  font: 14px arial, sans-serif;
+  padding: 2px;
+}
+
+#infinite-flash {
+  position: fixed;
+  top: 4px;
+  left: 50%;
+  margin-left: -100px;
+  width: 200px;
+  height: 20px;
+  color: #67003c;
+  background-color: #ffebb0;
+  font: 12px arial, sans-serif;
+  text-align: center;
+}
