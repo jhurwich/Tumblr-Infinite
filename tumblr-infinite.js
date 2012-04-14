@@ -9,16 +9,17 @@ if (typeof(TumblrInfinite) == "undefined") {
       url = url.replace("http://", "");
       url = url.replace("www.", "");
 
-      var firstSlash = url.indexOf('/');
-      var host;
-      if (firstSlash == -1) {
-        host = url;
+
+      var path;
+      var pageIndex = url.indexOf('page');
+      if (pageIndex != -1) {
+        path = url.substring(0, pageIndex + 4) + "/";
       }
-      else {
-        host = url.substring(0, url.indexOf('/'));
+      else { 
+        path = url + "/page/";
       }
       
-      var expectedPattern = host + "/page/([0-9]+)";
+      var expectedPattern = path + "([0-9]+)";
       var expectedRegex = new RegExp(expectedPattern, "i");
       
       // first figure out what page we are currenly on, or have loaded
@@ -49,7 +50,7 @@ if (typeof(TumblrInfinite) == "undefined") {
       TumblrInfinite.displayFlash("Loaded " + TumblrInfinite.loadedCount + "/" + TumblrInfinite.numToLoad);
       
       for (var i = 1; i <= num; i++) {
-        var nextURL = "http://www." + host + "/page/" + (currPage + i);
+        var nextURL = "http://www." + path + (currPage + i);
         TumblrInfinite.addPage(nextURL);
       }
 
