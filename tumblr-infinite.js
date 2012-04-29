@@ -8,6 +8,9 @@ if (typeof(TumblrInfinite) == "undefined") {
       var url = document.location.href;
       url = url.replace("http://", "");
       url = url.replace("www.", "");
+      if (url.lastIndexOf('/') == url.length - 1) {
+        url = url.substring(0, url.length - 1);
+      }
 
 
       var path;
